@@ -1,0 +1,59 @@
+Flask
+
+##Cria venv
+virtualenv -p python3 venv-flask
+
+##Acessa venv
+. venv-flask/bin/activate
+
+##Atualizar pip
+ python3 -m pip install --upgrade pip
+
+##criar arquivo
+touch nomearquivo.extesão (flask02.py)
+
+
+----
+
+Primeira parte:
+#!/usr/bin/env python3
+
+from flask import Flask
+app = Flask (__name__)
+
+@app.route("/flask02") #rotas
+def hello(): #views
+    return "Funcionou."
+    
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+Segunda Parte:Adiconando nova rota 'barra teste'/id
+#!/usr/bin/env python3
+
+from flask import Flask
+app = Flask (__name__)
+
+@app.route("/flask02/<id>") #rotas
+def hello(id): #views
+    return "Funcionou., %s" %(id)
+    
+if __name__ == "__main__":
+    app.run(debug=True)
+
+Terceira parte: Limitando o formato do dado para número inteiro
+
+#!/usr/bin/env python3
+
+from flask import Flask
+app = Flask (__name__)
+
+@app.route("/flask02/<int:id>") #rotas
+def hello(id): #views
+    return "Funcionou., %s" %(id)
+    
+if __name__ == "__main__":
+    app.run(debug=True)
+
+

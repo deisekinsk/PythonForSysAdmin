@@ -1,0 +1,38 @@
+##Clonar pasta do projeto
+git clone http://devops.4linux.com.br/41367/4521-python.git
+
+##Acessando pasta
+developer@developer:~$ ls
+4521-python
+developer@developer:~$ cd 4521-python/
+
+##Depois de instalar o VirtualEnviroment criar um VENV
+developer@developer:~/4521-python$ virtualenv -p python3 ../venv-helpdesk
+
+##Acessando pasta para conferir a criação do VENV
+developer@developer:~/4521-python$ cd ..
+developer@developer:~$ ls
+4521-python  venv-helpdesk
+
+##Aticando o VENV
+developer@developer:~$ . venv-helpdesk/bin/activate
+(venv-helpdesk) developer@developer:~$ 
+
+##Instalando as dependências do projeto
+(venv-helpdesk) developer@developer:~$ pip install flask pymongo flask_sqlalchemy
+
+## Acessando a pasta. E rodando a API. Roda no localhost, e Flask usa a porta padrão 5000
+(venv-helpdesk) developer@developer:~$ cd 4521-python/
+(venv-helpdesk) developer@developer:~/4521-python$ cd HelpDesk/
+(venv-helpdesk) developer@developer:~/4521-python/HelpDesk$ python run.py
+ * Serving Flask app "Models.Model" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 115-859-321
+
+##Acessar o Postman

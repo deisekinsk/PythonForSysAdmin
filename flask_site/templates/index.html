@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{%block title%}Flask & Jinja2{%endblock%}
+
+{% block content %}
+<!--{{ super() }}--> 
+<!-- Estrutura de decisão -->  
+{% if title %}
+<h2>{{ title }}</h2>
+{% else %}
+<h2>Lista</h2>
+{% endif %}
+<!-- Estrutura de repetição --> 
+<ul>
+    {% for nome in varNomes %}
+    <li>{{ nome }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

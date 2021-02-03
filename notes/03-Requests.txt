@@ -1,0 +1,83 @@
+## Acessar a venv
+. venv-helpdesk/bin/activate
+
+## Instalar Requestes
+pip install requests
+
+##Utiliza site tem todas as rotas para fazer requisições
+http://httpbin.org/
+
+##Criar arquivo request.py
+
+##Acessa arquivo pelo terminal
+(venv-helpdesk) developer@developer:~/4521-python/HandsOn/Aula 1$ python3 aula1_request.py 
+
+## Retorno de GET
+<Response [200]>
+{'origin': '189.34.224.38'}
+
+## Retorno de POST
+(venv-helpdesk) developer@developer:~/4521-python/HandsOn/Aula 1$ python3 aula1_request.py 
+{'args': {}, 'data': '{"nome": "Dandara", "sobrenome": "hummel"}', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '42', 'Content-Type': 'application/json', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.25.1', 'X-Amzn-Trace-Id': 'Root=1-6008d832-5055532476f01c7f70078793'}, 'json': {'nome': 'Dandara', 'sobrenome': 'hummel'}, 'origin': '189.34.224.38', 'url': 'http://httpbin.org/post'}
+
+##Retorno PATCH
+
+{'args': {}, 'data': '{"nome": "Dandara", "sobrenome": "hummel"}', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '42', 'Content-Type': 'application/json', 'Host': 'httpbin.org', 'User-Agent': 'python-requests/2.25.1', 'X-Amzn-Trace-Id': 'Root=1-60102e11-683855687bd365e557a0b1d3'}, 'json': {'nome': 'Dandara', 'sobrenome': 'hummel'}, 'origin': '189.34.224.38', 'url': 'http://httpbin.org/patch'}
+
+
+--------py-----------
+
+#primeira parte GET
+requisicao = requests.get("http://httpbin.org/ip")
+print(requisicao)
+
+json_to_dict = requisicao.json()
+print(json_to_dict)
+
+#segunda parte POST
+
+data = {
+    "nome": "Dandara",
+    "sobrenome": "hummel"
+}
+
+requisicao = requests.post(
+    "http://httpbin.org/post",
+    json=data,
+)
+
+json_to_dict = requisicao.json()
+print(json_to_dict)
+
+
+
+#terceira parte PATCH
+
+data = {
+    "nome": "Dandara",
+    "sobrenome": "hummel"
+}
+
+requisicao = requests.patch(
+    "http://httpbin.org/patch",
+    json=data,
+)
+
+json_to_dict = requisicao.json()
+print(json_to_dict)
+
+#quarta parte DELETE
+
+data = {
+    "nome": "Dandara",
+    "sobrenome": "hummel"
+}
+
+requisicao = requests.delete(
+    "http://httpbin.org/delete",
+    json=data,
+)
+
+json_to_dict = requisicao.json()
+print(json_to_dict)
+

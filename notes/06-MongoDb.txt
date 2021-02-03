@@ -1,0 +1,46 @@
+#Atualizar sistema
+sudo apt-get update
+
+#Instala mongodb
+sudo apt-get install -y mongodb-org
+
+#Usar tutorial de instalação
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/
+
+____ 
+ Pymongo
+
+#Instalar pymongo na venv
+#Instalar Mongo (sudo)
+
+#Criar código e rodá-lo no terminal
+(venv-flask02) developer@developer:~/code/pymongo$ python3 ref_pymongo.py 
+<pymongo.results.InsertOneResult object at 0x7f8422487b48>
+
+#Devem ser abertos dois terminais. Um para deixar o  mongo rodando.
+
+#Conferindo se os dados foram inseridos no BD
+> show dbs
+admin        0.000GB
+config       0.000GB
+flask-app    0.000GB
+flask02-app  0.000GB
+local        0.000GB
+> use flask02-app
+switched to db flask02-app
+> show tables
+user
+> db.user.find().pretty()
+{
+	"_id" : ObjectId("60108cec1584955fd129753e"),
+	"name" : "Iara Freeley",
+	"email" : "Não tem",
+	"messages" : [
+		{
+			"name" : "nome_user",
+			"message" : "Mensagem Aqui"
+		}
+	]
+}
+> 
+

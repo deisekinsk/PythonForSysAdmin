@@ -1,0 +1,3 @@
+#Criar nova venv
+#Instalar Flask
+#Atualizar pip

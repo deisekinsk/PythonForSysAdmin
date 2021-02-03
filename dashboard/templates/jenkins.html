@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Jenkins{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+            <h1 class="panel-title clearfix">Jenkins</h1>
+            </div>
+                <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-responsive">
+                    <thead>
+                    <tr>
+                    <th>Job</th>
+                    <th>Status</th>
+                    <th>Última vez</th>
+                    <th>Ações</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>==JOB==</td>
+                                <td>
+                                <img src="==IMAGEM DE ESTADO DO JENKINS=="
+                                alt="Icon">
+                                </td>
+                                <td>==STATUS==</td>
+                                <td>
+                                <a href="/jenkins/build/==NOME DO JOB=="
+                                class="glyphicon glyphicon-repeat"></a>
+                                <a href="/jenkins/update/==NOME DO JOB=="
+                                class="glyphicon glyphicon-pencil"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

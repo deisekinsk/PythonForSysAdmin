@@ -1,0 +1,17 @@
+Instalando Postman no Debiam (https://www.edivaldobrito.com.br/cliente-rest-postman-no-linux-manualmente/)
+
+##Desistala versões anteriores
+developer@developer:~$ sudo rm -Rf /opt/Postman
+developer@developer:~$ sudo rm -Rf /usr/bin/postman
+developer@developer:~$ sudo rm -Rf /usr/share/applications/postman
+
+##Confere versão
+developer@developer:~$ uname -m
+x86_64
+
+##Downloado do arquivo
+developer@developer:~$ wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+
+
+##descompactar o arquivo
+tar -vxzf postman.tar.gz

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Docker{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-md-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                    <h1 class="panel-title clearfix">Docker</h1>
+                    </div>
+                    <div class="panel-body">
+                        <h1>==NOME DO CONTAINER==</h1>
+                            <ul class="list-group">
+                            <li class="list-group-item"><b><i class="glyphicon
+                            glyphicon-barcode"></i> ID:</b> ==ID DO CONTAINER==</li>
+                            <li class="list-group-item"><b><i class="glyphicon
+                            glyphicon-film"></i> Imagem:</b> ==IMAGEM DO CONTAINER==</li>
+                            <li class="list-group-item"><b><i class="glyphicon
+                            glyphicon-stats"></i> Status:</b> ==STATUS DO CONTAINER==</li>
+                            </ul>
+                            <div class="row">
+                            <div class="col-sm-12 text-center">
+                            <a href="/docker/start" class="btn btn-primary">
+                            Iniciar</a>
+                            <a href="/docker/stop" class="btn btn-warning">
+                            Parar</a>
+                            </div>
+                            </div>
+                        <p>Container <b>"flask-app"</b> não foi encontrado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
